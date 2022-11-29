@@ -1,7 +1,7 @@
 # Python - Hello, World
 
 In this project, I began practicing using the interpreter, printing text
-and variables, and indexing and slicing strings in Python.
+and variables, as well as indexing and slicing strings in Python.
 
 ## Function Prototypes :floppy_disk:
 
@@ -71,7 +71,7 @@ Prototypes for functions written in this project:
   * Returns `0` if there is no cycle and `1` if there is.
   * Helper files:
     * [linked_lists.c](./linked_lists.c): C functions handling linked lists for testing
-    [10-check_cycle.c](./10-check_cycle.c) (provided by Holberton School).
+    [10-check_cycle.c](./10-check_cycle.c) (provided by ).
     * [lists.h](./lists.h): Header file containing definitions and prototypes for
     all types and functions used in [linked_lists.c](./linked_lists.c) and
     [10-check_cycle.c](./10-check_cycle.c).
@@ -88,5 +88,5 @@ Prototypes for functions written in this project:
   `$PYFILEc` (ex. `export PYFILE=my_main.py` => output filename: `my_main.pyc`).
 
 * **13. ByteCode -> Python #1**
-  * [102-magic_calculation.py](./102-magic_calculation.py): Python function matching exactly
-  a bytecode provided by Holberton School.
+  * [102-magic_calculation.py](./103-magic_calculation.py): Python function matching exactly
+  [a bytecode](https://docs.python.org/3.4/library/dis.html) provided by ALX.
