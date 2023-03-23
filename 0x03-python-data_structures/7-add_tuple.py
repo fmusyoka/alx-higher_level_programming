@@ -1,28 +1,18 @@
 #!/usr/bin/python3
-def add_tuple(tuple_a=(), tuple_b=()):
-    len_a = len(tuple_a)
-    len_b = len(tuple_b)
 
-    if len_a == 0:
-        a1 = 0
-        a2 = 0
-    elif len_a == 1:
-        a1 = tuple_a[0]
-        a2 = 0
-    else:
-        a1 = tuple_a[0]
-        a2 = tuple_a[1]
-
-    if len_b == 0:
-        b1 = 0
-        b2 = 0
-    elif len_b == 1:
-        b1 = tuple_b[0]
-        b2 = 0
-    else:
-        b1 = tuple_b[0]
-        b2 = tuple_b[1]
-
-    new_tuple = (a1 + b1, a2 + b2)
-
-    return (new_tuple)
+def add_tuple(a=(), b=()):
+    """
+    add the fisrst and second elems of a b
+    if any of a or b has less than 2 elems
+    0 is padded
+    Args:
+        a - tuple default empty
+        b - tuple default empty
+    Return:
+        (c, d)
+    """
+    while len(a) < 2:
+        a = (*a, 0)
+    while len(b) < 2:
+        b = (*b, 0)
+    return a[0] + b[0], a[1] + b[1]

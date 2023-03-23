@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 def divisible_by_2(my_list=[]):
-    check_div = []
-
-    for i in range(len(my_list)):
-        if my_list[i] % 2 == 0:
-            check_div.append(True)
+    nlist = []
+    if len(my_list) == 0:
+        return None
+    for item in my_list:
+        if item % 2 == 0:
+            nlist.append(True)
         else:
-            check_div.append(False)
-
-    return (check_div)
+            nlist.append(False)
+    return nlist

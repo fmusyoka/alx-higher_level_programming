@@ -1,55 +1,60 @@
 #!/usr/bin/python3
-""" class Square that defines a square"""
+"""Square class to represent a square"""
 
 
 class Square:
-    """ class Square that defines a square"""
-    def __init__(self, size=0):
-        """ init square
+    """
+    Defines a Square and its basic properties
+    >>> square_1 = Square()
+    >>> square_2 = Square(7)
+    """
 
-        Args:
-            value (int): size of the square.
+    def __init__(self, size=0) -> None:
         """
-        self.size = size
+        Innitialize the size of the square. the size can be specified.
+        If they are not, the size defaults to 0
+        :param size: int size of square ( > 0)
+        """
+        if (type(size) is not int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+
+        self.__size = size
 
     @property
-    def size(self):
-        """int: private size.
-
-        Returns:
-            Private size.
+    def size(self) -> int:
+        """
+        Retrieve the instance attribute size
+        :return: the size of the square
         """
         return self.__size
 
     @size.setter
-    def size(self, value):
-        """Sets value into size, must be int.
-
-        Args:
-            value (int): size of the square.
+    def size(self, value: int) -> None:
         """
-        if type(value) is not int:
-            raise TypeError('size must be an integer')
-        elif value < 0:
-            raise ValueError('size must be >= 0')
-        else:
-            self.__size = value  #: size of the square
-
-    def area(self):
-        """returns the area
-
-        Returns:
-            area.
+        Set the value of the size
+        :param: int size
         """
-        return self.__size**2
+        if (type(value) is not int):
+            raise TypeError("size must be an integer")
+        elif (value < 0):
+            raise ValueError("size must be >= 0")
+        self.__size = value
 
-    def my_print(self):
-        """prints in stdout the square with the character #"""
+    def area(self) -> int:
+        """
+        Calculates and returns the area of the square
+        :return: the area of the square
+        """
+        return self.__size ** 2
 
-        if self.__size != 0:
-            for i in range(self.__size):
-                for j in range(self.__size):
-                    print('#', end='')
-                print()
-        else:
+    def my_print(self) -> None:
+        """
+        Print to the stdout '#' * size
+        """
+        if self.__size == 0:
             print()
+        else:
+            for i in range(self.__size):
+                print("#" * self.__size)
